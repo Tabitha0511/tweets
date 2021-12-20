@@ -38,8 +38,6 @@ export class TweetContentComponent implements OnInit {
     this.tweet = response;
 
     this.authId = this.tweet.author_id;
-    console.log(this.tweet);
-    console.log(this.authId);
   }
 
   recent_tweets(): void {
@@ -67,7 +65,6 @@ export class TweetContentComponent implements OnInit {
       )
       .subscribe((res) => {
         this.tweets = res;
-        console.log(this.tweets);
       });
   }
 }

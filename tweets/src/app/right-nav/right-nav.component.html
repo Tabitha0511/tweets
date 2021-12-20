@@ -1,0 +1,72 @@
+<div class="relative text-gray-300 w-80 p-5 pb-0 mr-16">
+  <button type="submit" class="absolute ml-4 mt-3 mr-4">
+    <img src="../../assets/search.svg" class="w-5 mx-2" />
+  </button>
+
+  <input
+    type="search"
+    name="search"
+    placeholder="Search Twitter"
+    class="
+      bg-blue-800
+      h-10
+      pl-14
+      pr-5
+      w-full
+      rounded-full
+      text-sm
+      focus:outline-none
+      bg-purple-white
+      shadow
+      rounded
+      border-0
+    "
+  />
+</div>
+
+<!--second-trending tweet section-->
+<div class="rounded-lg bg-blue-800 overflow-hidden shadow-lg m-4 mr-20 p-5">
+  <div class="flex">
+    <div class="flex-1 m-2">
+      <h2 class="px-4 py-2 text-xl w-48 font-semibold text-white">
+        Twitter trends
+      </h2>
+    </div>
+  </div>
+
+  <hr class="border-gray-600" />
+
+  <!-- Trending tweet -->
+
+  <div class="flex" *ngFor="let tweets of trendingTweet">
+    <div class="flex-1">
+      <p class="px-4 ml-2 mt-3 w-48 text-xs text-gray-400">
+        {{ tweets.name }}. Trending
+      </p>
+      <p class="px-4 ml-2 w-36 font-bold text-2xl text-white">
+        {{ tweets.tag }}
+      </p>
+      <p class="px-4 ml-2 mb-3 w-48 text-xs text-gray-400">
+        {{ tweets.tweets }} Tweets
+      </p>
+      <hr class="border-gray-600" />
+    </div>
+  </div>
+</div>
+
+<!--Terms-->
+
+<div class="m-6 absolute bottom-0">
+  <div class="flex-1">
+    <a href="#">
+      <p class="text-sm leading-6 font-medium text-gray-500">
+        Terms Privacy Policy Cookies Imprint Ads info
+      </p>
+    </a>
+  </div>
+  <div class="flex-2">
+    <p class="text-sm leading-6 font-medium text-gray-600">
+      © 2021 Twitter, Inc.
+    </p>
+  </div>
+</div>

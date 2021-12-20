@@ -1,0 +1,139 @@
+<!--middle wall-->
+
+<div class="flex">
+  <div class="flex-1 m-2">
+    <h2 class="px-4 py-2 text-xl font-semibold text-white">Home</h2>
+  </div>
+  <div class="flex-1 px-4 py-2 m-2">
+    <a
+      href=""
+      class="
+        text-2xl
+        font-medium
+        rounded-full
+        text-white
+        hover:bg-blue-800 hover:text-blue-300
+        float-right
+      "
+    >
+      <img src="../../assets/top-tweets.svg" class="w-8" />
+    </a>
+  </div>
+</div>
+
+<hr class="border-gray-600" />
+<!--middle create tweet-->
+<div class="flex">
+  <div class="m-2 w-12 py-1">
+    <img src="../../assets/dp.svg" class="w-24 mx-2" />
+  </div>
+  <div class="flex-1 px-6 pt-2 mt-2">
+    <textarea
+      class="bg-transparent text-gray-400 font-medium text-lg w-full my-2"
+      rows="2"
+      cols="50"
+      placeholder="What's happening?"
+    ></textarea>
+  </div>
+</div>
+<!--middle creat tweet below icons-->
+<div class="flex">
+  <div class="w-10"></div>
+
+  <div class="w-64 px-2">
+    <div class="flex items-center">
+      <div class="flex-1 text-center px-1 py-1 m-2" *ngFor="let icon of icons">
+        <a
+          href="#"
+          class="
+            mt-1
+            group
+            flex
+            items-center
+            text-blue-400
+            px-2
+            py-2
+            text-base
+            leading-6
+            font-medium
+            rounded-full
+            hover:bg-blue-300
+          "
+        >
+          <img [src]="icon.icon" class="w-6" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex-1">
+    <button
+      class="
+        bg-blue-300
+        mt-5
+        hover:bg-blue-150
+        text-white
+        hover:text-blue-300
+        font-bold
+        py-2
+        px-8
+        rounded-full
+        mr-8
+        float-right
+      "
+    >
+      Tweet
+    </button>
+  </div>
+</div>
+
+<hr class="border-blue-800 border-4" />
+
+<div></div>
+
+<!-------------    TWEETS  ------------>
+<div class="overflow-scroll">
+  <div class="p-4 pb-0" *ngFor="let tweet of tweet; index as i">
+    <a href="#" class="flex-shrink-0 group block">
+      <div class="flex items-center">
+        <div class="p-3">
+          <img src="../../assets/dp.svg" class="w-8" />
+        </div>
+        <div class="ml-3">
+          <p class="text-base flex leading-6 font-medium text-white">
+            <span
+              class="
+                flex
+                text-sm
+                leading-5
+                font-medium
+                text-gray-400
+                group-hover:text-gray-300
+                transition
+                ease-in-out
+                duration-150
+                p-3
+              "
+            >
+              user_id: {{ tweet.author_id }}
+              <p class="px-6">{{ tweet.created_at.substr(0, 10) }}</p>
+            </span>
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <div class="pl-16">
+      <p class="text-base width-auto font-medium text-white flex-shrink">
+        {{ tweet.text }}
+      </p>
+
+      <div class="flex">
+        <div class="w-full">
+          <div class="flex items-center"></div>
+        </div>
+      </div>
+    </div>
+    <hr class="border-gray-600" />
+  </div>
+</div>

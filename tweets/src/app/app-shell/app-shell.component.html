@@ -1,0 +1,54 @@
+<div class="bg-black w-screen h-screen overflow-y-scroll justify-between">
+  <div class="flex">
+    <div class="w-1/5 text-white h-12 pl-32 py-4 fixed left-0 top-0">
+      <!--left menu-->
+      <img class="w-12" src="../../assets/twitter.svg" />
+
+      <nav class="mt-5 px-2" *ngFor="let nav of sidenav">
+        <a
+          href="#"
+          class="
+            flex
+            items-center
+            p-2
+            text-base
+            font-semibold
+            hover:bg-blue-300 hover:text-white
+            rounded-full
+            text-white
+          "
+        >
+          <img [src]="nav.icon" class="w-6 mr-4" id="icon-home" />
+
+          {{ nav.name }}
+        </a>
+      </nav>
+      <button
+        class="
+          w-48
+          mt-5
+          font-bold
+          py-2
+          px-4
+          rounded-full
+          bg-blue-300
+          hover:bg-blue-150
+          text-white
+          hover:text-blue-300
+        "
+      >
+        Tweet
+      </button>
+    </div>
+    <div class="w-1/5"></div>
+    <div
+      class="w-5/12 border border-gray-600 border-t-0 justify-items-center mx-6"
+    >
+      <app-tweet-content></app-tweet-content>
+    </div>
+    <div class="w-2/6 h-12 fixed right-0 top-0">
+      <!--right menu-->
+      <app-right-nav></app-right-nav>
+    </div>
+  </div>
+</div>
